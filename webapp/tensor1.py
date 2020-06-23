@@ -20,7 +20,7 @@ def detect_faces(image):
     return face_frames
 
 
-Emodel = load_model('emotions-(1).h5')
+Emodel = load_model('Model.h5')
 Emodel._make_predict_function()
 
     

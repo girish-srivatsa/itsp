@@ -5,16 +5,11 @@ from werkzeug.utils import secure_filename
 import tensor
 import keras.backend.tensorflow_backend as tb
 
-# For running in a windows environment
 os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
-
 tb._SYMBOLIC_SCOPE.value = True
 
 # Define a flask app
 app = Flask(__name__)
-
-y_classes = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
-
 
 @app.route('/', methods=['GET'])
 def index():
@@ -36,4 +31,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(threaded=False, host="0.0.0.0", port=8082)
+    app.run(threaded=False)

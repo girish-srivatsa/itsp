@@ -12,12 +12,9 @@ os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 def facecrop(image):
     facedata = r"/home/prajeeth/Environments/tf_env/lib/python3.8/site-packages/cv2/data/haarcascade_frontalface_alt.xml"
     cascade = cv2.CascadeClassifier(facedata)
-
     img = cv2.imread(image, 0)
-
     minisize = (img.shape[1],img.shape[0])
     miniframe = cv2.resize(img, minisize)
-
     faces = cascade.detectMultiScale(miniframe)
 
     for f in faces:
@@ -32,7 +29,7 @@ def facecrop(image):
     return new_path
 
 
-Emodel = load_model('emotions-(1).h5')
+Emodel = load_model('Model.h5')
 Emodel._make_predict_function()
 
 def emotion_function(img_path):
