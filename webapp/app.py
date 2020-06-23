@@ -2,10 +2,9 @@ import os
 from keras.models import load_model
 from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
-import tensor
+import tensor1
 import keras.backend.tensorflow_backend as tb
 
-os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 tb._SYMBOLIC_SCOPE.value = True
 
 # Define a flask app
@@ -26,7 +25,7 @@ def upload():
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
         print("File path: ", file_path)
-        return tensor.emotion_function(file_path)
+        return tensor1.emotion_function(file_path)
     return None
 
 

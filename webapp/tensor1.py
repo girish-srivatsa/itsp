@@ -1,8 +1,10 @@
 import dlib
 from PIL import Image
 import numpy as np
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 import os
+
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 
 def detect_faces(image):
 
@@ -17,9 +19,7 @@ def detect_faces(image):
     return face_frames
 
 
-Emodel = load_model('Model.h5')
-Emodel._make_predict_function()
-
+Emodel = load_model('Emotion-Model.h5')
     
 def emotion_function(image_path):
 

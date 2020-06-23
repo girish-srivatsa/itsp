@@ -1,10 +1,12 @@
 import tensorflow as tf
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 import cv2
 import os
 from pathlib import Path
+
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 
 def facecrop(image):
     facedata = r"/home/prajeeth/Environments/tf_env/lib/python3.8/site-packages/cv2/data/haarcascade_frontalface_alt.xml"
@@ -26,8 +28,7 @@ def facecrop(image):
     return new_path
 
 
-Emodel = load_model('Model.h5')
-Emodel._make_predict_function()
+Emodel = load_model('Emotion-Model.h5')
 
 def emotion_function(img_path):
     face_path = facecrop(img_path)
