@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Emotify</string>
+    <string name="image">Image View</string>
+    <string name="button_name">capture</string>
+</resources>
