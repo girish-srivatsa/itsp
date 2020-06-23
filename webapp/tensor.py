@@ -6,9 +6,6 @@ import cv2
 import os
 from pathlib import Path
 
-os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
-
-
 def facecrop(image):
     facedata = r"/home/prajeeth/Environments/tf_env/lib/python3.8/site-packages/cv2/data/haarcascade_frontalface_alt.xml"
     cascade = cv2.CascadeClassifier(facedata)

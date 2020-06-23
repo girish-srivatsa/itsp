@@ -4,9 +4,6 @@ import numpy as np
 from keras.models import load_model
 import os
 
-os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
-
-
 def detect_faces(image):
 
     # Create a face detector
